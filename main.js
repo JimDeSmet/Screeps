@@ -22,21 +22,21 @@ module.exports.loop = function () {
     var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester');
     console.log('Harvesters: ' + harvesters.length);
 
-    if (harvesters.length < harvestersNeeded) {
+    if (harvesters.length <= harvestersNeeded) {
         spawnharvester();
     }
 
     var builders = _.filter(Game.creeps, (creep) => creep.memory.role == 'builder');
     console.log('Builders: ' + builders.length);
 
-    if (builders.length < buildersNeeded) {
+    if (builders.length <= buildersNeeded) {
         spawnbuilder();
     }
 
     var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
     console.log('Upgraders: ' + upgraders.length);
 
-    if (upgraders.length < upgradersNeeded) {
+    if (upgraders.length <= upgradersNeeded) {
        spawnupgrader();
     }
 
