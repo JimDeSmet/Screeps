@@ -22,7 +22,7 @@ module.exports.loop = function () {
     var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester');
     console.log('Harvesters: ' + harvesters.length);
 
-    if (harvesters.length <= harvestersNeeded) {
+    if (harvesters.length < harvestersNeeded) {
         spawnharvester();
     }
 /*
