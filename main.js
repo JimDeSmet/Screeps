@@ -3,10 +3,10 @@ var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
 var buildersNeeded = 0;
 var harvestersNeeded = 1;
-var upgradersNeeded = 0;
+var upgradersNeeded = 1;
 
-//require('spawn.builder');
-//require('spawn.upgrader');
+require('spawn.builder');
+require('spawn.upgrader');
 require('spawn.harvester');
 
 module.exports.loop = function () {
@@ -25,7 +25,7 @@ module.exports.loop = function () {
     if (harvesters.length < harvestersNeeded) {
         spawnharvester();
     }
-/*
+
     var builders = _.filter(Game.creeps, (creep) => creep.memory.role == 'builder');
     console.log('Builders: ' + builders.length);
 
@@ -39,7 +39,7 @@ module.exports.loop = function () {
     if (upgraders.length <= upgradersNeeded) {
        spawnupgrader();
     }
-*/
+
     for(var name in Game.creeps) {
         var creep = Game.creeps[name];
         if(creep.memory.role == 'harvester') {
